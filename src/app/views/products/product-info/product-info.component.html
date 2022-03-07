@@ -1,0 +1,8 @@
+<div>
+  <app-product-info
+     [product]="(product$ | async)!"
+     (edit)="editProduct($event)"
+     (remove)="deleteProduct($event)"
+  >
+  </app-product-info>
+</div>

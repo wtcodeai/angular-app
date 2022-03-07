@@ -1,0 +1,21 @@
+<div class="product-details-container" *ngIf="product && product.id">
+
+  <div class="card">
+    <div class="card-header">
+      Product
+    </div>
+    <div class="card-body">
+      <p>Title: <span class="badge badge-primary">{{product.title}}</span></p>
+      <p>Price:  <span class="badge badge-primary">{{product.price}}</span></p>
+      <p>Description:  {{product.description}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      <span class="float-md-right ">
+        <button (click)="edit.emit(product)" class="btn btn-sm mr-1 btn-outline-primary"> EDIT</button>
+        <button (click)="remove.emit(product)" class="btn btn-sm mr-1 btn-outline-danger"> DELETE</button>
+      </span>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+<h1> Product list</h1>
+
+<app-product-list
+  [products]="(products$ | async)!"
+  (show)="showProduct($event)"
+  (remove)="deleteProduct($event)"
+  (edit)="editProduct($event)"
+></app-product-list>

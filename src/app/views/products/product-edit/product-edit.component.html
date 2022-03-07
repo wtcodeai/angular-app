@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header">
+    Edit Product
+  </div>
+  <div class="card-body">
+    <app-product-form [product]="(product$ | async)!" (save)="submitted($event)"> </app-product-form>
+
+  </div>
+
+</div>

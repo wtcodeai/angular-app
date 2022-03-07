@@ -1,0 +1,39 @@
+<table *ngIf="products; else loading" class="table table-hover table-responsive-md">
+  <thead class="header">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Desc</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="product-row" *ngFor="let p of products; trackBy: productsTrackByFn">
+    <th scope="row">{{p.id}}</th>
+    <td>{{ p.title }}</td>
+    <td>{{ p.price }}</td>
+    <td>{{ p.description }}</td>
+    <td>
+
+      <span class="float-right">
+        <button (click)="showProduct(p)" class="btn btn-outline-primary mb-1 mr-1 btn-sm">
+          DETAILS
+        </button>
+        <button (click)="editProduct(p)" class="btn btn-outline-primary mb-1 mr-1 btn-sm">
+          EDIT
+        </button>
+        <button (click)="deleteProduct(p)" class="btn btn-outline-danger mb-1 mr-1 btn-sm">
+          DELETE
+        </button>
+      </span>
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<ng-template #loading>
+  <span>loading Products...</span>
+</ng-template>
